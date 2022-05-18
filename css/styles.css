@@ -162,8 +162,9 @@ html {
 .wrapper__main .main__about__section>img {
     width: 80%;
     height: auto;
+    margin-left: 35px;
 }
-.wrapper__main>section>img {
+.wrapper__main-section>section>img {
     width: 80%;
     height: 300px;
     margin-left: 35px;
@@ -176,7 +177,7 @@ html {
     width: 80%;
     overflow: hidden;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 7px;
     color: #ffffff;
 }
 .wrapper__main-location {
@@ -294,6 +295,7 @@ footer>div>a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 15px;
     padding-top: 20px;
 }
 .wrapper__main .main__about__section>p {
@@ -306,6 +308,7 @@ footer>div>a {
     width: 320px;
     height: auto;
     margin: 50px 250px 20px 0px;
+    border-radius: 10px;
 }
 hr {
     display: none;
