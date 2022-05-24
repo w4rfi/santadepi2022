@@ -124,6 +124,10 @@ html {
     text-align: center;
     line-height: 30px;
 }
+.tracking__title {
+	-webkit-animation: tracking__title 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking__title 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
 .wrapper__main p {
     width: 80%;
     color: #ffffff; 
@@ -228,6 +232,11 @@ footer>div>a {
     font-weight: bold;
     text-transform: uppercase;
 }
+.footer__icon--vibrate {
+	-webkit-animation: icon--vibrate 0.3s linear infinite both;
+	animation: icon--vibrate 0.3s linear infinite both;
+}
+
 
 /* RESPONSIVE DESKTOP */
 
@@ -368,9 +377,98 @@ footer {
 }
 footer>div {
     justify-content: end;
+    gap: 8rem;
 }
 footer>div>a {
     font-size: 3.5rem;
     text-align: center;
 }
+}
+
+/* ANIMATIONS */
+
+@-webkit-keyframes icon--vibrate {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+@keyframes icon--vibrate {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@-webkit-keyframes tracking__title {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes tracking__title {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
 }
