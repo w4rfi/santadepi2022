@@ -21,7 +21,7 @@ html {
     font-size: 1.6rem;
     color: aliceblue;
     display: grid;
-    grid-template: 70px auto 70px / auto;
+    grid-template: 70px auto 110px / auto;
     background-image: url('../assets/stacked-steps-haikei.svg');
 }
 #wrapper__header {
@@ -213,24 +213,10 @@ footer {
     grid-area: 3 / 1 / 4 / 2;
     background-color: #f3b4fb;
     color: #af7fa6;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 10px;
-    text-align: center;
 }
-footer>div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 25px;
-}
-footer>div>a {
-    text-decoration: none;
+footer>div>div>a>i {
     color: #af7fa6;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    padding: 20px;
 }
 .footer__icon--vibrate {
 	-webkit-animation: icon--vibrate 0.3s linear infinite both;
@@ -297,7 +283,7 @@ footer>div>a {
     height: 350px;
 }
 .section__video:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
 }
 .main__about__section {
@@ -365,23 +351,6 @@ hr {
     align-items: flex-start;
     margin-bottom: 25px;
     padding-top: 10px;
-}
-
-/* FOOTER */
-
-footer {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-footer>div {
-    justify-content: end;
-    gap: 8rem;
-}
-footer>div>a {
-    font-size: 3.5rem;
-    text-align: center;
 }
 }
 
