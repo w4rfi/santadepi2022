@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
     <title>Contacto</title>
 </head>
+
 <!-- body va a ser el grid padre -->
 
 <body id="wrapper">
-<!-- titulo o logo y menú -->
-    <header id="wrapper__header">   
+
+    <!-- titulo o logo y menú -->
+    <header id="wrapper__header">
         <nav class="header__nav">
             <input type="checkbox" name="nav__checkbox" id="nav__checkbox" class="nav__checkbox">
             <label for="nav__checkbox" class="nav__toggle">
                 <!-- Menu -->
-                <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
-    
+                <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
+                    </svg>
+
                 <!-- Close -->
-                <svg class="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+                <svg class="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+                    </svg>
             </label>
             <ul class="header__nav__menu">
-                <li class="header__nav__logo"><a href="../index.html"><img src="../assets/logo4.jpg" alt="logo SantaDepi"></a></li>
+                <li class="header__nav__logo"><a href="../index.html"><img src="../assets/logo4.jpg"
+                            alt="logo SantaDepi"></a></li>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./aboutus.html">Quienes somos?</a></li>
                 <li><a href="./teams.html">Equipos</a></li>
@@ -34,61 +49,72 @@
         </nav>
     </header>
     <!-- fin menu -->
+
     <!-- formulario -->
     <main class="wrapper__main">
         <h2 class="main__title tracking__title">Solicita tu turno</h2>
         <article>
-        <section class="main__contact__section">
-            <form action="send.html" method="post" enctype="text/plain">
-                <fieldset class="main__contact_fieldset">
-                    <legend>Completa los datos para que coordinemos el turno a través de WhatsApp.</legend>
-                    <label for="">Nombre</label>
-                    <br>
-                    <input type="text" placeholder="Nombre" required>
-                    <br>
-                    <label for="">Apellido</label>
-                    <br>
-                    <input type="text" placeholder="Apellido" required>
-                    <br><br>
-                    <label for="">Sexo</label>
-                    <br>
-                    <label>Hombre
-						<input type="radio" name="lado" value="hombre" required>
-					</label>
-					<label>Mujer
-						<input type="radio" name="lado" value="mujer" required>
-					</label>
-                    <br><br>
-                    <label for="">Email</label>
-                    <br>
-                    <input type="text" placeholder="Email">
-                    <br>
-                    <label for="">Numero de celular</label>
-                    <br>
-                    <input type="tel" placeholder="(Código de area) Número" required>
-                    <br><br>
-                    <input type="submit">
-                </fieldset>
-            </form>
-        </section>
+            <section class="main__contact__section">
+                <form action="send.html" method="post" enctype="text/plain">
+                    <fieldset class="main__contact_fieldset">
+                        <legend>Completa los datos para que coordinemos el turno a través de WhatsApp.</legend>
+                        <label for="">Nombre</label>
+                        <br>
+                        <input type="text" placeholder="Nombre" required>
+                        <br>
+                        <label for="">Apellido</label>
+                        <br>
+                        <input type="text" placeholder="Apellido" required>
+                        <br><br>
+                        <label for="">Sexo</label>
+                        <br>
+                        <label>Hombre
+                            <input type="radio" name="lado" value="hombre" required>
+                        </label>
+                        <label>Mujer
+                            <input type="radio" name="lado" value="mujer" required>
+                        </label>
+                        <br><br>
+                        <label for="">Email</label>
+                        <br>
+                        <input type="text" placeholder="Email">
+                        <br>
+                        <label for="">Numero de celular</label>
+                        <br>
+                        <input type="tel" placeholder="(Código de area) Número" required>
+                        <br><br>
+                        <input type="submit">
+                    </fieldset>
+                </form>
+            </section>
         </article>
     </main>
     <!-- fin formulario -->
+
     <!-- footer -->
     <footer class="container-fluid">
         <div class="row">
-        <div class="col-6 col-md-12 d-flex justify-content-start justify-content-md-center align-items-center">
-            <a href=""><i class="fa-brands fa-instagram footer__icon--vibrate fa-2x"></i></a>
-            <a href=""><i class="fa-brands fa-whatsapp footer__icon--vibrate fa-2x"></i></a>
-        </div>
-        <div class="col-6 col-md-12 d-flex justify-content-center justify-content-md-center align-items-end text-end">
-            <p class="fs-3">Todos los derechos reservados. &#169</p>
-        </div>
+            <div class="col-6 col-md-12 d-flex justify-content-start justify-content-md-center align-items-center">
+                <a href=""><i class="fa-brands fa-instagram footer__icon--vibrate fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp footer__icon--vibrate fa-2x"></i></a>
+            </div>
+            <div
+                class="col-6 col-md-12 d-flex justify-content-center justify-content-md-center align-items-end text-end">
+                <p class="fs-3">Todos los derechos reservados. &#169</p>
+            </div>
         </div>
     </footer>
     <!-- fin footer -->
+
     <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <!-- fin bootstrap js -->
+
 </body>
+
 </html>
