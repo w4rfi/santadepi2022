@@ -21,8 +21,9 @@ html {
     font-size: 1.6rem;
     color: aliceblue;
     display: grid;
-    grid-template: 70px auto 90px / auto;
-    background-image: url('../assets/stacked-steps-haikei.svg');
+    grid-template: 70px auto 110px / auto;
+    background-image: url('../assets/stacked-steps-haikei(1).svg');
+    background-size: cover;
 }
 #wrapper__header {
     background-color: #f3b4fb;
@@ -110,15 +111,15 @@ html {
 .wrapper__main {
     grid-area: 2 / 1 / 3 / 2;
     width: 100%;
-    height: 100%;
+    height: (100vh + 110px);
     margin-top: 3rem;
-    background-image: url('../assets/stacked-steps-haikei.svg');
+    /* background-image: url('../assets/stacked-steps-haikei(1).svg'); */
 }
 .main__title {
     height: 50px;
     font-size: 3rem;
     font-weight: bold;
-    margin-top: 2rem;
+    margin: 2rem;
     padding-bottom: 2rem;
     color: #daccd7;
     text-align: center;
@@ -163,26 +164,15 @@ html {
     width: 100%;
     height: auto;
 }
-.wrapper__main .main__about__section>img {
-    width: 80%;
-    height: auto;
-    margin-left: 35px;
+.main__about__section {
+    padding-bottom: 20px;
 }
-.wrapper__main-section>section>img {
-    width: 80%;
-    height: 300px;
-    margin-left: 35px;
-    border-radius: 10px;
-}
-.main__teams__section {
-    padding-top: 20px;
-}
-.main__teams__section>article>p {
-    width: 80%;
-    overflow: hidden;
-    text-align: center;
-    padding-top: 7px;
+
+.main__teams__section>p {
+    padding-top: 15px;
     color: #ffffff;
+    text-align: center;
+    overflow: hidden;
 }
 .wrapper__main-location {
     display: flex;
@@ -195,13 +185,25 @@ html {
     width: 300px; 
     height: 400px;
 }
-.main__contact__section {
-    width: 80%;
-    margin: auto;
+.main__title-location {
+    margin-top: 30px;
     padding-top: 10px;
 }
+.main__contact__section {
+    height: 100vh;
+}
 .main__contact_fieldset {
-    padding: 1rem 0 0 5.5rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 15px;
+}
+.input__contact {
+    margin-top: 20px;
 }
 hr {
     background-color: #ffffff;
@@ -220,13 +222,48 @@ footer {
 }
 footer>div>a>i {
     color: #af7fa6;
-    padding: 10px 10px;
+    padding: 10px;
 }
 .footer__icon--vibrate {
 	-webkit-animation: icon--vibrate 0.3s linear infinite both;
 	animation: icon--vibrate 0.3s linear infinite both;
 }
 
+
+/* RESPONSIVE TABLET */
+
+@media only screen and (min-width:810px) {
+    .wrapper__main-location {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-top: 3rem;
+    }
+    .wrapper__main-location>section>iframe {
+        width: 700px; 
+        height: 400px;
+    }
+    .main__contact__section {
+        padding-top: 30px;
+        margin: auto;
+    }
+    .main__contact_fieldset {
+        width: 80%;
+        height: 600px;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        padding-top: 10px;
+        border: 2PX solid #ffffff9c;
+    }
+    .input__contact {
+        margin-top: 20px;
+    }
+}
 
 /* RESPONSIVE DESKTOP */
 
@@ -273,7 +310,7 @@ footer>div>a>i {
     padding-top: 40px;
     width: 70%;
     height: 150px;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 .main__index__section {
     flex-direction: row;
@@ -301,7 +338,7 @@ footer>div>a>i {
     width: 800px;
     height: auto;
     padding-top: 10px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 .wrapper__main .main__about__section>img {
     width: 320px;
@@ -320,12 +357,11 @@ hr {
 }
 .main__teams__section {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
-.main__teams__section>article>p {
-    width: 600px;
+.main__teams__section>p {
     font-size: 2rem;
     padding-top: 15px;
 }
@@ -343,18 +379,23 @@ hr {
     padding-bottom: 20px;
 }
 .main__contact__section {
-    padding-top: 30px;
+    padding: 30px 0px 20px;
+    margin: auto;
 }
 .main__contact_fieldset {
-    width: 100%;
-    height: 400px;
+    width: 50%;
+    height: 600px;
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin-bottom: 25px;
-    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    border: 2PX solid #ffffff9c;
+}
+.input__contact {
+    margin-top: 20px;
 }
 }
 
