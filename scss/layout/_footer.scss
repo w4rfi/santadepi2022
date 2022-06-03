@@ -1,0 +1,17 @@
+footer {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: $background-principal;
+    color: $color-icons;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    i {
+        color: $color-icons;
+        padding: 10px;
+    }
+}
+.footer__icon--vibrate {
+	-webkit-animation: icon--vibrate 0.3s linear infinite both;
+	animation: icon--vibrate 0.3s linear infinite both;
+}
