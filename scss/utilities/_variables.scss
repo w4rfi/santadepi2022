@@ -4,3 +4,19 @@ $background-video: #af7fa683;
 $color-icons: #af7fa6;
 $color-text: #fff;
 $color-border: #ec99f7;
+
+$texts:( 
+    index: #1465bb,
+    aboutus: #ffbf75,
+    teams: #fff,
+);
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+    
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}

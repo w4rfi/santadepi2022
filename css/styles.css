@@ -95,24 +95,26 @@ html {
   width: 100%;
   word-wrap: break-word;
   margin-top: 3rem; }
-  .wrapper__main p {
-    width: 80%;
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: 400;
-    text-align: center;
-    background: #af7fa6b6;
-    opacity: 0.7;
-    overflow: hidden;
-    margin: 2rem auto 2rem auto;
-    padding-bottom: 10px;
-    border-radius: 35px 0px 35px 0px;
-    -moz-border-radius: 35px 0px 35px 0px;
-    -webkit-border-radius: 35px 0px 35px 0px;
-    border: 2px solid #ec99f7; }
   .wrapper__main section {
     width: 100%;
     height: auto; }
+
+.main__text--index, .main__text--aboutus, .main__text--teams {
+  width: 80%;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  background: #af7fa6b6;
+  opacity: 0.7;
+  overflow: hidden;
+  margin: 2rem auto 2rem auto;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border-radius: 35px 0px 35px 0px;
+  -moz-border-radius: 35px 0px 35px 0px;
+  -webkit-border-radius: 35px 0px 35px 0px;
+  border: 2px solid #ec99f7; }
 
 .main__title {
   height: 50px;
@@ -155,11 +157,6 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .main__teams__section p {
-    padding-top: 15px;
-    color: #fff;
-    text-align: center;
-    overflow: hidden; }
   .main__teams__section img {
     width: 280px;
     height: auto;
@@ -208,8 +205,8 @@ footer {
   justify-content: space-between;
   align-items: center; }
   footer i {
-    color: #af7fa6;
-    padding: 10px; }
+    padding: 10px;
+    color: #af7fa6; }
 
 .footer__icon--vibrate {
   -webkit-animation: icon--vibrate 0.3s linear infinite both;
@@ -409,3 +406,12 @@ footer {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     opacity: 1; } }
+
+.main__text--index, .main__text--aboutus, .main__text--teams {
+  color: #1465bb; }
+
+.main__text--aboutus {
+  color: #ffbf75; }
+
+.main__text--teams {
+  color: #fff; }
