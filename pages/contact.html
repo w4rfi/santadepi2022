@@ -22,7 +22,7 @@
     <!-- main styles -->
 
     <link rel="stylesheet" href="../css/styles.css">
-    
+
     <title>SantaDepi | Depilación definitiva | Sobre nosotros</title>
 </head>
 
@@ -65,34 +65,42 @@
     <!-- formulario -->
     <main class="wrapper__main">
         <h2 class="main__title tracking__title">Solicita tu turno</h2>
-        <section class="main__contact__section">
-            <form action="" name="FormularioContacto" method="post" enctype="text/plain" netlify>
-                <fieldset class="main__contact_fieldset">
-                    <legend>Completa los datos para que coordinemos el turno a través de WhatsApp.</legend>
-                    <label for="" class="input__contact">Nombre</label>
-                    <input type="text" placeholder="Nombre" required>
-                    <label for="">Apellido</label>
-                    <input type="text" placeholder="Apellido" required>
-                    <label for="" class="input__contact">Sexo</label>
-                    <label>Hombre
-                        <input type="radio" name="lado" value="hombre" required>
-                    </label>
-                    <label>Mujer
-                        <input type="radio" name="lado" value="mujer" required>
-                    </label>
-                    <label for="" class="input__contact">Email</label>
-                    <input type="text" placeholder="Email">
-                    <label for="" class="input__contact">Numero de celular</label>
-                    <input type="tel" placeholder="(Código de area) Número" required>
-                    <input type="submit" class="input__contact btn--send btn-light btn-lg">
-                </fieldset>
-            </form>
-        </section>
+        <form id="survey-form" name="contact" method="POST" data-netlify="true">
+            <legend>Completa los datos para que coordinemos el turno a través de WhatsApp.</legend>
+            <div class="form-group">
+                <label for="">Nombre:</label>
+                <input type="text" id="name" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="">Apellido:</label>
+                <input type="text" id="name" placeholder="Apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="">Email:</label>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="">Número de telefono:</label>
+                <input type="tel" min="10" max="20" id="number" placeholder="(Código de area) Número" required>
+            </div>
+            <div class="form-group">
+                <button id="submit" type="submit">Enviar</button>
+            </div>
+        </form>
     </main>
     <!-- fin formulario -->
 
     <!-- footer -->
     <footer>
+        <div class="footer__mapsite">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./aboutus.html">Quienes somos?</a></li>
+                <li><a href="./pages/teams.html">Equipos</a></li>
+                <li><a href="./pages/location.html">Ubicación</a></li>
+                <li><a href="./pages/contact.html">Contacto</a></li>
+            </ul>
+        </div>
         <div>
             <a href=""><i class="fa-brands fa-instagram footer__icon--vibrate fa-2x"></i></a>
             <a href=""><i class="fa-brands fa-whatsapp footer__icon--vibrate fa-2x"></i></a>
@@ -103,7 +111,7 @@
     </footer>
     <!-- fin footer -->
 
-        <!-- COMENTARIO DE PRUEBA PARA LOS CAMBIOS. -->
+    <!-- COMENTARIO DE PRUEBA PARA LOS CAMBIOS. -->
 
 </body>
 

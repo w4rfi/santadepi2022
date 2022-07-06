@@ -1,15 +1,37 @@
 footer {
-    grid-area: 3 / 1 / 4 / 2;
+    grid-area: 3 / 1 / 5 / 2;
     background-color: $background-principal;
     color: $color-icons;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    p {
+        text-decoration: none;
+    }
     i {
         padding: 10px;
         color: $color-icons;
     }
+}
+.footer__mapsite {
+    font-size: 1.6rem;
+    text-align: center;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        list-style: none;
+        li {
+            margin-top: 15px;
+            padding: 5px;
+            a {
+                text-decoration: none;
+                color: $color-icons;
+            }
+    }
+}
 }
 .footer__icon--vibrate {
 	-webkit-animation: icon--vibrate 0.3s linear infinite both;

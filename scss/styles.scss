@@ -114,6 +114,7 @@
     img {
         width: 280px;
         height: auto;
+        margin-top: 10px;
         border: 1px solid $color-text;
         border-radius: 20px 0px 20px 0px;
     }
@@ -141,22 +142,35 @@
     padding-top: 10px;
 }
 
-.main__contact__section {
-    height: 100vh;
+#survey-form {
+    border: 2px solid $color-border;
+    background-color: $background-secundario;
+    width: 320px;
+    height: 440px;
+    margin: auto auto 20px auto;
+    legend {
+        margin-top: 5px;
+        text-align: center;
+    }
 }
 
-.main__contact_fieldset {
-    width: 80%;
-    @include flex-column;
-    justify-content: center;
+.form-group {
+    padding-top: 5px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin: auto;
-    padding-bottom: 15px;
+    margin-top: 10px;
+    input {
+        width: 200px;
+    }
 }
 
-.input__contact {
-    margin-top: 20px;
+
+#submit {
+    margin: 25px auto auto auto;
+    width: 125px;
+    background-color: #8ecdf1;
 }
 
 hr {
@@ -181,28 +195,11 @@ hr {
         }
     }
 
-    .main__contact__section {
-        padding-top: 30px;
-        margin: auto;
-    }
-
-    .main__contact_fieldset {
-        width: 80%;
-        height: 600px;
-        font-size: 2rem;
-        @include flex-column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: auto;
-        padding-top: 10px;
-        border: 2px solid $color-text;
-    }
-
-    .input__contact {
-        margin-top: 20px;
+    footer {
+        justify-content: space-evenly;
     }
 }
+
 
 // RESPONSIVE DESKTOP
 
