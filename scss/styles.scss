@@ -335,27 +335,11 @@ hr {
         }
     }
 
-    .main__contact__section {
-        padding: 30px 0px 20px;
-        margin: auto;
-    }
-
-    .main__contact_fieldset {
-        width: 50%;
-        height: 600px;
+    footer a {
         font-size: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: auto;
-        border: 2px solid $color-text;
-    }
+        padding-left: 25px;
+}
 
-    .input__contact {
-        margin-top: 20px;
-    }
 }
 
 // ANIMATIONS
