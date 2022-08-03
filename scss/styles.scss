@@ -177,6 +177,32 @@ hr {
     background-color: $color-text;
 }
 
+#costArea {
+    height: 550px;
+    margin: 25px auto auto auto;
+    // position: relative;
+}
+
+#addFeminineZones {
+    margin: 15px auto auto auto;
+    border: solid 2px #fff;
+    padding: 10px;
+    text-align: center;
+    h3 {
+        font-size: 1.6rem;
+    }
+}
+
+#addMasculineZones {
+    margin: 15px auto 10px auto;
+    border: solid 2px #fff;
+    padding: 5px;
+    text-align: center;
+    h3 {
+        font-size: 1.6rem;
+    }
+}
+
 // FOOTER
 
 @import "./layout/footer";
@@ -194,6 +220,7 @@ hr {
             height: 400px;
         }
     }
+
 
     footer {
         justify-content: space-evenly;

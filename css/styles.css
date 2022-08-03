@@ -209,6 +209,26 @@ html {
 hr {
   background-color: #fff; }
 
+#costArea {
+  height: 550px;
+  margin: 25px auto auto auto; }
+
+#addFeminineZones {
+  margin: 15px auto auto auto;
+  border: solid 2px #fff;
+  padding: 10px;
+  text-align: center; }
+  #addFeminineZones h3 {
+    font-size: 1.6rem; }
+
+#addMasculineZones {
+  margin: 15px auto 10px auto;
+  border: solid 2px #fff;
+  padding: 5px;
+  text-align: center; }
+  #addMasculineZones h3 {
+    font-size: 1.6rem; }
+
 footer {
   grid-area: 3 / 1 / 5 / 2;
   background-color: #f3b4fb;
