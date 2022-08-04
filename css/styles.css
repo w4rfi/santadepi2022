@@ -209,25 +209,50 @@ html {
 hr {
   background-color: #fff; }
 
+.btnPosition {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 30px auto;
+  gap: 20px; }
+
+.btn {
+  background-color: #f3b4fb;
+  width: 150px;
+  border: none;
+  border-radius: 12px;
+  color: #f36bf3;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; }
+
 #costArea {
-  height: 550px;
   margin: 25px auto auto auto; }
 
 #addFeminineZones {
+  width: 70%;
   margin: 15px auto auto auto;
-  border: solid 2px #fff;
   padding: 10px;
   text-align: center; }
   #addFeminineZones h3 {
     font-size: 1.6rem; }
 
 #addMasculineZones {
+  width: 70%;
   margin: 15px auto 10px auto;
-  border: solid 2px #fff;
-  padding: 5px;
+  padding: 10px;
   text-align: center; }
   #addMasculineZones h3 {
     font-size: 1.6rem; }
+
+.fem {
+  display: block; }
+
+.masc {
+  display: block; }
 
 footer {
   grid-area: 3 / 1 / 5 / 2;
