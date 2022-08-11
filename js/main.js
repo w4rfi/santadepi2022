@@ -29,23 +29,10 @@ listaZonas.push( new Zonas("Espalda", 500, 8, "masculino"))
 listaZonas.push( new Zonas("Gluteos", 500, 9, "masculino"))
 listaZonas.push( new Zonas("Zona intima", 500, 10, "masculino"))
 
-// for (const elemento of listaZonas) {
-//     console.log("id=", elemento.id)
-//     console.log("nombre=", elemento.zona)
-//     console.log("precio=", elemento.precio)
-//     console.log("sexo=", elemento.sexo)
-// }
-
-// const ocultar = () => {
-//     document.getElementById("addFeminineZones").style.display = 'none';
-// }
-
-
-// 
-
 
 const eventoClickfem = document.getElementById("fem");
 const eventoClickmasc = document.getElementById("masc");
+
 
 const costo = document.getElementById("costArea");
 
@@ -55,14 +42,24 @@ eventoClickfem.addEventListener("click", () => {
     costo.innerHTML = "";
     for (const zonas of listaZonas) {
         if (zonas.sexo != "masculino") {
-            const costs = document.createElement("div")
+            const costs = document.createElement("div");
+            costs.classList.add("prices");
             costs.innerHTML = `
-                        <h3> Zona: ${zonas.zona} </h3>               
-                        <p> Precio: <strong> ${zonas.precio} </strong><p>
+                        <label class="formOptions" id="pricesOptions" for="">
+                        <input name="insecto" type="checkbox" value="${zonas.precio}">
+                        <p>${zonas.zona}: ${zonas.precio}</p>
+                        </label>
                         `;
         costo.append(costs);
         }
     }
+    const calculatorBtn = document.createElement("div")
+    calculatorBtn.classList.add("calculator")
+    calculatorBtn.innerHTML = `
+                        <button type="submit" id="calculatorBtn" class="btn"><strong>Calcular</strong></button>
+                        `;
+
+    costo.append(calculatorBtn);
     
 });
 
@@ -70,18 +67,41 @@ eventoClickmasc.addEventListener("click", (e) => {
     costo.innerHTML = "";
     for (const zonas of listaZonas) {
         if (zonas.sexo != "femenino") {
-            const costs = document.createElement("div")
+            const costs = document.createElement("div");
+            costs.classList.add("prices");
             costs.innerHTML = `
-                        <h3> Zona: ${zonas.zona} </h3>               
-                        <p> Precio: <strong> ${zonas.precio} </strong><p>
+                        <label class="formOptions" id="pricesOptions" for="">
+                        <input name="insecto" type="checkbox" value="${zonas.precio}">
+                        <p>${zonas.zona}: ${zonas.precio}</p>
+                        </label>
                         `;
         costo.append(costs);
         }
     }
+
+    const calculatorBtn = document.createElement("div")
+    calculatorBtn.classList.add("calculator")
+    calculatorBtn.innerHTML = `
+                    <button type="submit" id="calculatorBtn" class="btn"><strong>Calcular</strong></button>
+                    `;
+
+        costo.append(calculatorBtn);
+
+        costo.addEventListener("click", (e) => {
+            const selectPrices = e.target; 
+        
+            const select = [
+                parseInt(selectPrices[0].value),
+                parseInt(selectPrices[1].value),
+                parseInt(selectPrices[2].value),
+                parseInt(selectPrices[3].value),
+                parseInt(selectPrices[4].value)
+            ];
+        
+            console.log(select);
+        });
     
 });
-
-
 
 
 
