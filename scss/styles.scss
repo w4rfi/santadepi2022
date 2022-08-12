@@ -177,68 +177,34 @@ hr {
     background-color: $color-text;
 }
 
-.btnPosition {
-    // display: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto 30px auto;
-    gap: 20px;
+.card {
+    background-color: $background-secundario;
 }
 
-.btn {
-    background-color: $background-principal; 
-    width: 150px;
-    border: none;
-    border-radius: 12px;
-    color: #f36bf3;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px
-    
+.cardo {
+    margin-top: 30px;
 }
 
-.calculator {
-    margin-left: 50px;
-    margin-top: 20px;
+.text-cente{
+    margin-right: 25px;
+    color: #fff;
 }
 
-#formCosts {
-    width: 250px;
-    height: 400px;
-    // border: #000 solid 2px;
-    margin: auto;
+.containet {
+    margin-left: 145px;
+
 }
 
-#costArea {
-    margin: 25px auto auto auto;
+#zonasYprecios {
+    h5 {
+        color: #fff;
+    }
 }
 
-.formOptions {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+.table {
+    margin-top: 60px;
+    margin-bottom: 300px;
 }
-
-.prices {
-    margin-left: 50px;
-    margin-top: 20px;
-}
-
-.fem{
-    display: block;
-}
-
-.masc{
-    display: block;
-}
-
-
-
-
 
 
 // FOOTER
@@ -404,12 +370,14 @@ hr {
         margin-top: 15px;
     }
 
-    #pricesOptions {
+
+    #zonasYprecios {
         p {
             padding: 10px;
             font-size: 1.6rem;
             width: 200px;
             height: 30px;
+            color: #f36bf3;
         }
     }
 

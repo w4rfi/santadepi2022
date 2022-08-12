@@ -209,52 +209,25 @@ html {
 hr {
   background-color: #fff; }
 
-.btnPosition {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 50px auto 30px auto;
-  gap: 20px; }
+.card {
+  background-color: #af7fa6b6; }
 
-.btn {
-  background-color: #f3b4fb;
-  width: 150px;
-  border: none;
-  border-radius: 12px;
-  color: #f36bf3;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px; }
+.cardo {
+  margin-top: 30px; }
 
-.calculator {
-  margin-left: 50px;
-  margin-top: 20px; }
+.text-cente {
+  margin-right: 25px;
+  color: #fff; }
 
-#formCosts {
-  width: 250px;
-  height: 400px;
-  margin: auto; }
+.containet {
+  margin-left: 145px; }
 
-#costArea {
-  margin: 25px auto auto auto; }
+#zonasYprecios h5 {
+  color: #fff; }
 
-.formOptions {
-  display: flex;
-  flex-direction: row;
-  gap: 10px; }
-
-.prices {
-  margin-left: 50px;
-  margin-top: 20px; }
-
-.fem {
-  display: block; }
-
-.masc {
-  display: block; }
+.table {
+  margin-top: 60px;
+  margin-bottom: 300px; }
 
 footer {
   grid-area: 3 / 1 / 5 / 2;
@@ -389,11 +362,12 @@ footer {
       padding-bottom: 20px; }
   #formCosts {
     margin-top: 15px; }
-  #pricesOptions p {
+  #zonasYprecios p {
     padding: 10px;
     font-size: 1.6rem;
     width: 200px;
-    height: 30px; }
+    height: 30px;
+    color: #f36bf3; }
   footer a {
     font-size: 2rem;
     padding-left: 25px;

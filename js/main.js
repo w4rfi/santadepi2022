@@ -17,94 +17,70 @@ class Zonas {
 
 const listaZonas = [];
 
+
+
 listaZonas.push( new Zonas("Bozo", 500, 1, "femenino"))
 listaZonas.push( new Zonas("Rostro", 900, 2, "femenino"))
 listaZonas.push( new Zonas("Axila", 900, 3, "femenino"))
 listaZonas.push( new Zonas("Cavado", 1200, 4, "femenino"))
-listaZonas.push( new Zonas("Cavado bikini", 900, 5, "femenino"))
 
 listaZonas.push( new Zonas("Pecho", 500, 6, "masculino"))
 listaZonas.push( new Zonas("Abdomen", 500, 7, "masculino"))
 listaZonas.push( new Zonas("Espalda", 500, 8, "masculino"))
-listaZonas.push( new Zonas("Gluteos", 500, 9, "masculino"))
-listaZonas.push( new Zonas("Zona intima", 500, 10, "masculino"))
+listaZonas.push( new Zonas("Zona intima", 1200, 10, "masculino"))
 
 
-const eventoClickfem = document.getElementById("fem");
-const eventoClickmasc = document.getElementById("masc");
 
 
-const costo = document.getElementById("costArea");
+const zonasYprecios = document.getElementById("zonasYprecios");
+const agregarTabla = document.getElementById("agregarTabla");
 
-// Evento para mostrar precios!
 
-eventoClickfem.addEventListener("click", () => {
-    costo.innerHTML = "";
-    for (const zonas of listaZonas) {
-        if (zonas.sexo != "masculino") {
-            const costs = document.createElement("div");
-            costs.classList.add("prices");
-            costs.innerHTML = `
-                        <label class="formOptions" id="pricesOptions" for="">
-                        <input name="insecto" type="checkbox" value="${zonas.precio}">
-                        <p>${zonas.zona}: ${zonas.precio}</p>
-                        </label>
-                        `;
-        costo.append(costs);
+
+for (const zonas of listaZonas) {
+    const placa = document.createElement("div");
+    placa.classList.add("col-3")
+    placa.classList.add("cardo")
+    placa.innerHTML = `
+        <div class="card text-center" style="width: 18rem; height: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">${zonas.zona}</h5>
+                <p class="card-text text-uppercase text-white">Precio: $${zonas.precio}</p>
+                <a href="#" id="${zonas.id}" class="btn btn-light agregar">Agregar</a>
+            </div>
+        </div> 
+                `;
+
+    zonasYprecios.append(placa);
+}
+
+
+const clickAgregar = document.getElementsByClassName("agregar");
+
+for (const seleccion of clickAgregar) {
+    seleccion.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log(e.target.id)
+        let producto = listaZonas.find(item => item.id === parseInt(e.target.id))
+        const tr = document.createElement('tr');
+        tr.innerHTML =`
+            <td>${producto.sexo}</td>
+            <td>${producto.zona}</td>
+            <td>${producto.precio}</td>
+            `
+            agregarTabla.append(tr)
+
+// SE AGREGO LO SELECCIONADO EN LA LISTA AL LOCALSTORAGE
+
+        const eleccionString = localStorage.getItem('agregados');
+        let eleccionParseado = [];
+        if (eleccionString) {
+            eleccionParseado = JSON.parse(eleccionString);
         }
-    }
-    const calculatorBtn = document.createElement("div")
-    calculatorBtn.classList.add("calculator")
-    calculatorBtn.innerHTML = `
-                        <button type="submit" id="calculatorBtn" class="btn"><strong>Calcular</strong></button>
-                        `;
-
-    costo.append(calculatorBtn);
-    
-});
-
-eventoClickmasc.addEventListener("click", (e) => {
-    costo.innerHTML = "";
-    for (const zonas of listaZonas) {
-        if (zonas.sexo != "femenino") {
-            const costs = document.createElement("div");
-            costs.classList.add("prices");
-            costs.innerHTML = `
-                        <label class="formOptions" id="pricesOptions" for="">
-                        <input name="insecto" type="checkbox" value="${zonas.precio}">
-                        <p>${zonas.zona}: ${zonas.precio}</p>
-                        </label>
-                        `;
-        costo.append(costs);
-        }
-    }
-
-    const calculatorBtn = document.createElement("div")
-    calculatorBtn.classList.add("calculator")
-    calculatorBtn.innerHTML = `
-                    <button type="submit" id="calculatorBtn" class="btn"><strong>Calcular</strong></button>
-                    `;
-
-        costo.append(calculatorBtn);
-
-        costo.addEventListener("click", (e) => {
-            const selectPrices = e.target; 
         
-            const select = [
-                parseInt(selectPrices[0].value),
-                parseInt(selectPrices[1].value),
-                parseInt(selectPrices[2].value),
-                parseInt(selectPrices[3].value),
-                parseInt(selectPrices[4].value)
-            ];
+            eleccionParseado.push(producto);
         
-            console.log(select);
-        });
-    
-});
-
-
-
-
-
+            localStorage.setItem('agregados', JSON.stringify(eleccionParseado));    
+    })
+}
 
