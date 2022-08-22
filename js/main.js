@@ -35,26 +35,19 @@ listaZonas.push( new Zonas("Abdomen", 500, 7, "masculino"))
 listaZonas.push( new Zonas("Espalda", 500, 8, "masculino"))
 listaZonas.push( new Zonas("Zona intima", 1200, 10, "masculino"))
 
-// ######################################
-// SE MUESTRAN LAS ZONAS A TRAVEZ DEL DOM
-// ######################################
+// ########################################################
+// FUNCION QUE GENERA E INCORPORA LAS CARDS DE LOS PRODUCTOS
+// ########################################################
 
-const zonasYprecios = document.getElementById("zonasYprecios");
-
-for (const zonas of listaZonas) {
+const productosYprecios = ({zona, precio, id}) => {
+    const zonasYprecios = document.getElementById("zonasYprecios");
     const placa = document.createElement("div");
-    placa.classList.add("col-3")
-    placa.classList.add("cardo")
+    placa.classList.add("product")
     placa.innerHTML = `
-        <div class="card text-center" style="width: 18rem; height: 18rem">
-            <div class="card-body">
-                <h5 class="card-title">${zonas.zona}</h5>
-                <p class="card-text text-uppercase text-white">Precio: $${zonas.precio}</p>
-                <a href="#" id="${zonas.id}" class="btn btn-light agregar">Agregar</a>
-            </div>
-        </div> 
+                <div class="proname">${zona}</div>
+                <h2>$${precio}</h2>
+                <button id="${id}" class="selectButton agregar">Seleccionar!</button>
                 `;
-
     zonasYprecios.append(placa);
 }
 
@@ -73,6 +66,68 @@ const agregarEleccionATabla = ({sexo, zona, precio}) => {
         agregarTabla.append(tr)
 }
 
+
+// ######################################
+// SE AGREGAN LOS PRODUCTOS SEGÚN EL SEXO
+// ######################################
+
+const eventoSexo = document.getElementsByClassName("sexo")
+
+for (const sexos of eventoSexo) {
+        sexos.addEventListener("click", (e) => {
+        // e.preventDefault()
+        console.log(e.target.id)
+        zonasYprecios.innerHTML = "";
+        if (sexos.id === "femenino") {
+            for (const cardsZonas of listaZonas) {
+                if (cardsZonas.sexo != "masculino") {
+                    productosYprecios(cardsZonas);
+                }
+            }
+        } else if (sexos.id === "masculino") {
+            for (const cardsZonas of listaZonas) {
+                if (cardsZonas.sexo != "femenino") {
+                    productosYprecios(cardsZonas);
+                }
+            }
+        }
+
+// #################################################################################
+// SE RECORRER EL ARRAY QUE GENERA EL LLAMADO A LA CLASE, SE IDENTIFICA EL PRODUCTO
+// Y SE AGREGA A LA TABLA
+// #################################################################################
+
+const clickAgregar = document.getElementsByClassName("agregar");
+
+for (const seleccion of clickAgregar) {
+        seleccion.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log(e.target.id)
+        Swal.fire({
+            title: 'Listo!',
+            text: 'Agregaste una zona al carrito!',
+            icon: 'success',
+            confirmButtonText: 'Cerrar'
+        });
+        let producto = listaZonas.find(item => item.id === parseInt(e.target.id))
+        agregarEleccionATabla(producto);
+        
+// ######################################################
+// SE AGREGO LO SELECCIONADO EN LA LISTA AL LOCALSTORAGE
+// ######################################################
+
+        const eleccionString = localStorage.getItem('agregados');
+        const eleccionParseado = eleccionString ? JSON.parse(eleccionString) : [];
+
+            eleccionParseado.push(producto);
+        
+            localStorage.setItem('agregados', JSON.stringify(eleccionParseado));    
+        
+    })
+}
+    })
+}
+
 // #################################################################################
 // SE MANTIENE EN LA TABLA LO QUE FUE ANTERIORMENTE SELECCIONADO A TRAVES DEL LOCAL
 // STORAGE
@@ -85,30 +140,10 @@ eleccionParseado.forEach((agregar) => {
     agregarEleccionATabla(agregar);
     });
 
-// #################################################################################
-// SE RECORRER EL ARRAY QUE GENERA EL LLAMADO A LA CLASE, SE IDENTIFICA EL PRODUCTO
-// Y SE AGREGA A LA TABLA
-// #################################################################################
-    
-const clickAgregar = document.getElementsByClassName("agregar");
+const agregarTotal = document.getElementsByClassName("total");
 
-for (const seleccion of clickAgregar) {
-    seleccion.addEventListener("click", (e) => {
-        e.preventDefault()
-        console.log(e.target.id)
-        let producto = listaZonas.find(item => item.id === parseInt(e.target.id))
-        agregarEleccionATabla(producto);
-
-// ######################################################
-// SE AGREGO LO SELECCIONADO EN LA LISTA AL LOCALSTORAGE
-// ######################################################
-
-        const eleccionString = localStorage.getItem('agregados');
-        const eleccionParseado = eleccionString ? JSON.parse(eleccionString) : [];
-
-            eleccionParseado.push(producto);
-        
-            localStorage.setItem('agregados', JSON.stringify(eleccionParseado));    
-    })
-}
+let sumall = eleccionParseado.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
+    // const total = document.createElement('div');
+    // total.innerHTML = `<p>Su total es: ${sumall}</p>`
+    console.log(sumall);
 
