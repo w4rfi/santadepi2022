@@ -104,10 +104,11 @@ for (const seleccion of clickAgregar) {
         e.preventDefault()
         console.log(e.target.id)
         Swal.fire({
-            title: 'Listo!',
-            text: 'Agregaste una zona al carrito!',
+            position: 'top-center',
             icon: 'success',
-            confirmButtonText: 'Cerrar'
+            title: 'Agregaste una zona al carrito!',
+            showConfirmButton: false,
+            timer: 1500
         });
         let producto = listaZonas.find(item => item.id === parseInt(e.target.id))
         agregarEleccionATabla(producto);
