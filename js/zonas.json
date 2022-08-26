@@ -1,0 +1,57 @@
+[
+    {
+        "zona": "Bozo",
+        "precio": 500,
+        "id": 1,
+        "sexo": "femenino"
+    },
+
+    {
+        "zona": "Rostro",
+        "precio": 900,
+        "id": 2,
+        "sexo": "femenino"
+    },
+
+    {
+        "zona": "Axila",
+        "precio": 900,
+        "id": 3,
+        "sexo": "femenino"
+    },
+
+    {
+        "zona": "Cavado",
+        "precio": 1200,
+        "id": 4,
+        "sexo": "femenino"
+    },
+
+    {
+        "zona": "Pecho",
+        "precio": 500,
+        "id": 5,
+        "sexo": "masculino"
+    },
+
+    {
+        "zona": "Abdomen",
+        "precio": 500,
+        "id": 6,
+        "sexo": "masculino"
+    },
+
+    {
+        "zona": "Espalda",
+        "precio": 500,
+        "id": 7,
+        "sexo": "masculino"
+    },
+
+    {
+        "zona": "Zona intima",
+        "precio": 1200,
+        "id": 8,
+        "sexo": "masculino"
+    }
+]

@@ -1,7 +1,7 @@
 
-// ###############
+// #######################
 //  CONSTRUCTOR PARA ZONAS
-// ###############
+// #######################
 class Zonas {
     constructor (zona, precio, id, sexo) {
         this.zona = zona;
@@ -19,21 +19,23 @@ class Zonas {
     }
 }
 
-// ###############################
-// ARRAY PARA PUSHEAR NUEVAS ZONAS
-// ###############################
+// ################################################
+// ARRAY PARA PUSHEAR NUEVAS ZONAS UTILIZANDO FETCH
+// ################################################
 
 const listaZonas = [];
 
-listaZonas.push( new Zonas("Bozo", 500, 1, "femenino"))
-listaZonas.push( new Zonas("Rostro", 900, 2, "femenino"))
-listaZonas.push( new Zonas("Axila", 900, 3, "femenino"))
-listaZonas.push( new Zonas("Cavado", 1200, 4, "femenino"))
+const getZonas = async () => {
+    const response = await fetch('../js/zonas.json');
+    const data = await response.json();
+    const arrayData =  data.map((zona) => {
+        listaZonas.push(new Zonas(zona.zona, zona.precio, zona.id, zona.sexo));
+    });
 
-listaZonas.push( new Zonas("Pecho", 500, 6, "masculino"))
-listaZonas.push( new Zonas("Abdomen", 500, 7, "masculino"))
-listaZonas.push( new Zonas("Espalda", 500, 8, "masculino"))
-listaZonas.push( new Zonas("Zona intima", 1200, 10, "masculino"))
+    console.log(listaZonas);
+}
+getZonas()
+
 
 // ########################################################
 // FUNCION QUE GENERA E INCORPORA LAS CARDS DE LOS PRODUCTOS
@@ -58,10 +60,12 @@ const productosYprecios = ({zona, precio, id}) => {
 const agregarEleccionATabla = ({sexo, zona, precio}) => {
     const agregarTabla = document.getElementById("agregarTabla");
     const tr = document.createElement('tr');
+    tr.classList.add('quitar')
     tr.innerHTML =`
         <td>${sexo}</td>
         <td>${zona}</td>
         <td>${precio}</td>
+        <td><i id="${zona}" class="fa-solid fa-xmark"></i></td>
         `
         agregarTabla.append(tr)
 }
@@ -75,8 +79,6 @@ const eventoSexo = document.getElementsByClassName("sexo")
 
 for (const sexos of eventoSexo) {
         sexos.addEventListener("click", (e) => {
-        // e.preventDefault()
-        console.log(e.target.id)
         zonasYprecios.innerHTML = "";
         if (sexos.id === "femenino") {
             for (const cardsZonas of listaZonas) {
@@ -102,7 +104,6 @@ const clickAgregar = document.getElementsByClassName("agregar");
 for (const seleccion of clickAgregar) {
         seleccion.addEventListener("click", (e) => {
         e.preventDefault()
-        console.log(e.target.id)
         Swal.fire({
             position: 'top-center',
             icon: 'success',
@@ -141,10 +142,25 @@ eleccionParseado.forEach((agregar) => {
     agregarEleccionATabla(agregar);
     });
 
-const agregarTotal = document.getElementsByClassName("total");
+// ############################################################
 
-let sumall = eleccionParseado.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
-    // const total = document.createElement('div');
-    // total.innerHTML = `<p>Su total es: ${sumall}</p>`
-    console.log(sumall);
+const clickEliminar = document.getElementsByClassName('quitar');
+
+for (const quitar of clickEliminar) {
+    quitar.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(e.target.id);
+    quitar.remove();
+
+    const eleccionParseado = JSON.parse(eleccionString);   
+    const quitarLocal = eleccionParseado.filter( nombre => nombre.zona !== e.target.id );
+
+    localStorage.setItem('agregados', JSON.stringify(quitarLocal))
+
+console.log(quitarLocal)
+    
+    })
+}
+
+// ##############################################################
 
