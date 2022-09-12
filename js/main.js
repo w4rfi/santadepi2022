@@ -1,3 +1,5 @@
+const eleccionString = localStorage.getItem('agregados');
+const eleccionParseado = eleccionString ? JSON.parse(eleccionString) : [];
 
 // #######################
 //  CONSTRUCTOR PARA ZONAS
@@ -32,7 +34,6 @@ const getZonas = async () => {
         listaZonas.push(new Zonas(zona.zona, zona.precio, zona.id, zona.sexo));
     });
 
-    console.log(listaZonas);
 }
 getZonas()
 
@@ -70,12 +71,14 @@ const agregarEleccionATabla = ({sexo, zona, precio}) => {
         agregarTabla.append(tr)
 }
 
+const eventoSexo = document.getElementsByClassName("sexo")
+const clickEliminar = document.getElementsByClassName('quitar');
+const clickAgregar = document.getElementsByClassName("agregar");
+const sumaTotal = eleccionParseado.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
 
 // ######################################
 // SE AGREGAN LOS PRODUCTOS SEGÚN EL SEXO
 // ######################################
-
-const eventoSexo = document.getElementsByClassName("sexo")
 
 for (const sexos of eventoSexo) {
         sexos.addEventListener("click", (e) => {
@@ -99,44 +102,71 @@ for (const sexos of eventoSexo) {
 // Y SE AGREGA A LA TABLA
 // #################################################################################
 
-const clickAgregar = document.getElementsByClassName("agregar");
-
 for (const seleccion of clickAgregar) {
         seleccion.addEventListener("click", (e) => {
         e.preventDefault()
-        Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Agregaste una zona al carrito!',
-            showConfirmButton: false,
-            timer: 1500
-        });
-        let producto = listaZonas.find(item => item.id === parseInt(e.target.id))
-        agregarEleccionATabla(producto);
-        
-// ######################################################
-// SE AGREGO LO SELECCIONADO EN LA LISTA AL LOCALSTORAGE
-// ######################################################
+        console.log(e.target.id)
 
-        const eleccionString = localStorage.getItem('agregados');
-        const eleccionParseado = eleccionString ? JSON.parse(eleccionString) : [];
+        let producto = listaZonas.find(item => item.id === parseInt(e.target.id));
+        let controlLocal = eleccionParseado.includes(producto);
 
+        if (controlLocal == false){
+            agregarEleccionATabla(producto);
             eleccionParseado.push(producto);
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Agregaste una zona al carrito!',
+                showConfirmButton: false,
+                timer: 2500
+            });
+        } else if (controlLocal) {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Esta zona ya se agrego al carrito!',
+                showConfirmButton: false,
+                timer: 2500
+            });
+        }
         
-            localStorage.setItem('agregados', JSON.stringify(eleccionParseado));    
+        localStorage.setItem('agregados', JSON.stringify(eleccionParseado));    
+
+
+for (const quitar of clickEliminar) {
+        quitar.addEventListener("click", (event) => {
+        event.preventDefault();
+        let nombreZona = event.target.id;
+        quitar.remove();
+            console.log(nombreZona)
+        const quitarLocal = eleccionParseado.filter(nombre =>  nombre.zona !== nombreZona);
+            
+            console.log(quitarLocal);
         
+        localStorage.setItem('agregados', JSON.stringify(quitarLocal))
+        
+    })
+}
+
+
+// #############################
+// SE MUESTRA EL TOTAL
+// #############################
+    const sumaTotal = eleccionParseado.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
+    const p = document.getElementById('totalSuma');
+    p.innerText = `Total: ${sumaTotal}`;
+
+// ##############################
     })
 }
     })
 }
 
-// #################################################################################
+
+//#################################################################################
 // SE MANTIENE EN LA TABLA LO QUE FUE ANTERIORMENTE SELECCIONADO A TRAVES DEL LOCAL
 // STORAGE
-// #################################################################################
-
-const eleccionString = localStorage.getItem('agregados');
-const eleccionParseado = JSON.parse(eleccionString) || [];
+//#################################################################################
 
 eleccionParseado.forEach((agregar) => {
     agregarEleccionATabla(agregar);
@@ -144,23 +174,28 @@ eleccionParseado.forEach((agregar) => {
 
 // ############################################################
 
-const clickEliminar = document.getElementsByClassName('quitar');
-
 for (const quitar of clickEliminar) {
-    quitar.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log(e.target.id);
+    quitar.addEventListener("click", (event) => {
+    event.preventDefault();
+    let nombreZona = event.target.id;
     quitar.remove();
-
-    const eleccionParseado = JSON.parse(eleccionString);   
-    const quitarLocal = eleccionParseado.filter( nombre => nombre.zona !== e.target.id );
+        console.log(nombreZona)
+    const quitarLocal = eleccionParseado.filter(nombre =>  nombre.zona !== nombreZona);
+    
+        console.log(quitarLocal);
 
     localStorage.setItem('agregados', JSON.stringify(quitarLocal))
 
-console.log(quitarLocal)
-    
+
     })
 }
 
-// ##############################################################
+// #############################
+// SE MUESTRA EL TOTAL
+// #############################
+
+    const p = document.getElementById('totalSuma');
+    p.innerText = `Total: ${sumaTotal}`;
+
+// ##############################
 
